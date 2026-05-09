@@ -1,0 +1,192 @@
+:root {
+    /* Modern Color Palette */
+    --color-primary: #003366;
+    --color-accent: #ff9133;
+    --color-bg-light: #f8fafc;
+    --color-white: #ffffff;
+    --color-text-main: #2d3436;
+    --color-text-muted: #636e72;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 20px 40px rgba(0, 51, 102, 0.1);
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Global Styles */
+body {
+    background-color: var(--color-bg-light);
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text-main);
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.header_about {
+    position: relative;
+    background: linear-gradient(rgba(0, 51, 102, 0.8), rgba(0, 51, 102, 0.6)),
+                url("../Gambar/ABOUT_HEADER_ANIMASI.jpeg") center/cover no-repeat fixed;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+}
+
+.text-header-about {
+    text-align: center;
+    color: white;
+}
+
+.text-header-about .line {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid transparent;
+}
+
+.line1 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 4px; animation: typing 1.5s steps(40) forwards; color: var(--color-accent); font-weight: 600; }
+.line2 { font-size: 3.5rem; font-weight: 700; animation: typing 1.5s steps(40) forwards 1.5s; }
+.line3 { font-size: 2.5rem; font-weight: 300; animation: typing 1.5s steps(40) forwards 3s; }
+
+@keyframes typing {
+    from { width: 0; border-right-color: var(--color-accent); }
+    to { width: 100%; border-right-color: transparent; }
+}
+
+/* Content Layout */
+.content-wrapper {
+    max-width: 1200px;
+    margin: -50px auto 100px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Description Boxes */
+.desc_box_intro, .desc_box_outro {
+    background: var(--color-white);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.accent-line {
+    width: 60px;
+    height: 4px;
+    background: var(--color-accent);
+    margin: 0 auto 20px;
+    border-radius: 2px;
+}
+
+/* Partners Section */
+.main_container {
+    margin: 80px 0;
+}
+
+/* Update Bagian Section Title */
+.section-title {
+    margin-bottom: 30px; /* Jarak section title ke grid kartu di bawahnya */
+}
+
+.section-title h2 {
+    font-size: 2.2rem;
+    color: var(--color-primary);
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px; /* Sesuaikan jarak garis bawah (jika ada) */
+    margin-bottom: 5px;  /* INI KUNCINYA: Memperkecil jarak bawah h2 */
+}
+
+.section-title p {
+    color: var(--color-text-muted);
+    margin-top: 0;       /* INI KUNCINYA: Menghapus margin atas bawaan p */
+    font-size: 1rem;
+}
+
+.grid-partners {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ==================================== */
+/* 5. Modern Cards - Full Color Version */
+/* ==================================== */
+
+.card {
+    background: var(--color-white);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Border lebih halus */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--shadow-soft);
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--color-accent);
+}
+
+.img-container {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* Memberikan sedikit background lembut agar logo terlihat kontras */
+    background-color: #fcfcfc; 
+    border-radius: 12px;
+}
+
+.card img {
+    max-width: 85%;
+    max-height: 110px;
+    object-fit: contain;
+    /* Efek grayscale dihapus agar warna langsung muncul */
+    filter: none; 
+    opacity: 1; /* Langsung terang */
+    transition: var(--transition);
+}
+
+.card:hover img {
+    transform: scale(1.08); /* Sedikit zoom saat hover agar dinamis */
+}
+
+/* Update pada bagian ini */
+.card-info {
+    margin-top: 10px;
+    text-align: center; /* Menarik semua konten di dalamnya ke tengah */
+    width: 100%;       /* Memastikan area teks memenuhi lebar kartu */
+}
+
+.card-info h3 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;    /* Memastikan h3 mengambil satu baris penuh */
+}
+
+.card-info span {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 400;
+    display: block;    /* Agar teks keterangan berada di bawah h3 dan tetap di tengah */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .line2 { font-size: 2rem; }
+    .line3 { font-size: 1.5rem; }
+    .header_about { height: 50vh; }
+    .grid-partners { grid-template-columns: 1fr; }
+}

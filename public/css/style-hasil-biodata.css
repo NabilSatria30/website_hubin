@@ -1,0 +1,325 @@
+:root {
+  --primary: #007bff;
+  --primary-dark: #0056b3;
+  --primary-soft: #eef6ff;
+  --bg: #f8f9fc;
+  --text-main: #2d3436;
+  --text-muted: #636e72;
+  --white: #ffffff;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+.main-wrapper {
+  min-height: 100vh;
+}
+
+/* HEADER STYLE */
+.top-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  padding: 40px 30px 60px 30px;
+  color: var(--white);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-circle {
+  background: rgba(255, 255, 255, 0.2);
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.back-circle:hover {
+  background: var(--white);
+  transform: translateX(-3px);
+}
+
+.back-circle img {
+  width: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.back-circle:hover img {
+  filter: none;
+}
+
+.title-group h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.title-group p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+/* SEARCH BOX */
+.search-form {
+  position: relative;
+}
+
+.search-form input {
+  width: 300px;
+  padding: 12px 50px 12px 20px;
+  border-radius: 12px;
+  border: none;
+  font-size: 14px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.search-icon-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-icon-btn img {
+  width: 16px;
+  filter: brightness(0) invert(1);
+}
+
+/* TABLE CARD */
+.content-container {
+  max-width: 1400px;
+  margin: -30px auto 40px;
+  padding: 0 20px;
+}
+
+.table-card {
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1400px; /* Ditambah untuk mengakomodasi kolom alamat */
+}
+
+thead th {
+    background: #f8f9fa;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 18px 15px;
+    text-align: center; 
+    border-bottom: 2px solid #edf2f7;
+    vertical-align: middle;
+}
+
+/* Default td rata kiri, tapi bisa di-override */
+tbody td {
+  padding: 16px 15px;
+  border-bottom: 1px solid #edf2f7;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+tbody tr:hover {
+  background-color: var(--primary-soft);
+}
+
+/* ALIGNMENT UTILS */
+.txt-center { text-align: center !important; }
+.txt-left { text-align: left !important; }
+
+/* Trik agar isi yang rata kiri tetap berada di tengah kolom */
+.cell-center {
+    text-align: center !important;
+}
+
+.address-info, .contact-info, .placement-info, .mentor-info {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* CELL CONTENT STYLES */
+.student-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eee;
+  flex-shrink: 0;
+}
+
+.img-table {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
+  cursor: zoom-in;
+}
+
+.name-text {
+  display: block;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.sub-text {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.badge-light {
+  background: var(--primary-soft);
+  color: var(--primary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.address-info p {
+    margin: 0;
+    max-width: 200px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.contact-info small {
+  display: block;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.date-range {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.date-divider {
+  width: 10px;
+  height: 2px;
+  background: #ddd;
+  margin: 4px auto;
+}
+
+.mentor-info span {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 2px;
+}
+
+.label {
+  font-style: normal;
+  font-weight: 700;
+  color: var(--primary);
+  margin-right: 4px;
+}
+
+/* BUTTONS */
+.btn-edit-action {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-edit-action:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* MODAL OVERLAY */
+.image-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  backdrop-filter: blur(5px);
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+.close-overlay {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .header-content {
+    flex-direction: column;
+    gap: 25px;
+    text-align: center;
+  }
+  .brand-section { flex-direction: column; }
+  .search-form input { width: 100%; }
+}
